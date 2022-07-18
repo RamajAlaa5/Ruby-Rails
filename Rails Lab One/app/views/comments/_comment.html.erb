@@ -1,0 +1,26 @@
+<% unless comment.archived? %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <%= button_to 'Destroy Comment', [comment.article, comment],
+                  method: :delete,
+                  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+
+    <%= link_to 'Delete', url_for(action: :destroy, id:comment.article_id,id: comment.id),
+                data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+
+    <%= button_to "Delete my account", @comment, form: { data: { turbo_confirm: "Are you sure to delete?" } }, method: :delete %>
+
+  </p>
+
+<% end %>
+
+
