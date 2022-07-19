@@ -1,0 +1,9 @@
+<h1> <%= @book.name%></h1>
+<p>  <%= @book.price%> </p>
+
+<%= link_to "Edit" ,edit_book_path(@book) %>
+
+<%= link_to "Destroy", book_path(@book), data:{
+    turbo_method: :delete,turbo_confirm: "Are you sure to delete this book?" } %>
+
+<%= link_to "Back" , root_path(@book) %> 
