@@ -1,0 +1,8 @@
+
+<%= render @role %>
+<div>
+  <%= link_to "Edit Role", edit_role_path(@role) %> |
+  <%= link_to "Back to roles", roles_path %>
+
+  <%= button_to "Destroy Role", @role, method: :delete %>
+</div>
